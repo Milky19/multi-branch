@@ -21,13 +21,13 @@ pipeline {
         }
 
         stage('Run Tests') {
-            steps {
-                sh '''
-                    . venv/bin/activate
-                    pytest -v
-                '''
-            }
-        }
+    steps {
+        sh '''
+            . venv/bin/activate
+            pytest -v test/
+        '''
+    }
+}
 
         stage('Build') {
             when {
